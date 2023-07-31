@@ -1,0 +1,32 @@
+architectury {
+    common(rootProject.enabled_platforms.split(","))
+}
+
+dependencies {
+    // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
+    // Do NOT use other classes from fabric loader
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    // Remove the next line if you don't want to depend on the API
+    modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
+
+    modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
+    modApi "dev.kosmx.player-anim:player-animation-lib:${rootProject.player_animation_lib}"
+    modApi "de.maxhenkel.voicechat:voicechat-api:${rootProject.voicechat_api}"
+    modApi "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
+    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-fabric"
+
+}
+
+publishing {
+    publications {
+        mavenCommon(MavenPublication) {
+            artifactId = rootProject.archives_base_name
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+    }
+}

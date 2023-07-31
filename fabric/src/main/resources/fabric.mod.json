@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "emotetweaks",
+  "version": "${version}",
+  "name": "EmoteTweaks",
+  "description": "Mod for allowing some Tweaked functionality of EmoteCraft",
+  "authors": [
+    "RyanV",
+    "Wolfie"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksFabric"
+    ],
+    "voicechat": [
+      "dev.bsmp.emotetweaks.voicefx.SoundPlugin"
+    ]
+  },
+  "mixins": [
+    "EmoteTweaks.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.16.5",
+    "emotecraft": "2.2.7-b.build.47",
+    "voicechat": ">=1.16.5-2.3.3"
+  }
+}

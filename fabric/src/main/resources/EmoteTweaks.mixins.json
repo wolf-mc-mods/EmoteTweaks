@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "dev.bsmp.emotetweaks.emotetweaks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "client": [
+    "ClientConfigSerializerMixin",
+    "ClientEmotePlayMixin",
+    "DefaultsMixin",
+    "EmoteHolderMixin",
+    "EmoteScreenMixin",
+    "KeyMixin"
+  ],
+  "mixins": [
+    "AnimationBinaryMixin",
+    "AnimationJsonMixin",
+    "KeyframeAnimationPlayerMixin",
+    "NetDataAccessor",
+    "ServerEmotePlayMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
