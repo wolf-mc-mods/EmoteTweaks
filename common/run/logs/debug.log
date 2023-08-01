@@ -1,0 +1,26 @@
+[17:23:02] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.16.5 with Fabric Loader 0.14.19
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Found game constructor: net.minecraft.client.main.Main -> net.minecraft.client.Minecraft
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Patching game constructor <init>(Lnet/minecraft/client/main/GameConfig;)V
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Run directory field is thought to be net/minecraft/client/Minecraft/gameDirectory
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/client/ClientBrandRetriever::getClientModName
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/server/MinecraftServer::getServerModName
+[17:23:02] [main/DEBUG] (FabricLoader/GamePatch) Patched 3 classs
+[17:23:02] [main/DEBUG] (FabricLoader/Discovery) Mod discovery time: 15.4 ms
+[17:23:02] [main/WARN] (FabricLoader/Resolution) Mod resolution failed
+[17:23:02] [main/INFO] (FabricLoader/Resolution) Immediate reason: [HARD_DEP_NO_CANDIDATE emotecraft 2.2.7-b.build.47 {depends fabric @ [>=0.16.4]}, ROOT_FORCELOAD_SINGLE emotecraft 2.2.7-b.build.47]
+[17:23:02] [main/INFO] (FabricLoader/Resolution) Reason: [HARD_DEP emotecraft 2.2.7-b.build.47 {depends fabric @ [>=0.16.4]}, HARD_DEP emotecraft 2.2.7-b.build.47 {depends player-animator @ [*]}]
+[17:23:02] [main/INFO] (FabricLoader/Resolution) Fix: add [], remove [], replace [[emotecraft 2.2.7-b.build.47] -> add:emotecraft 1 ([(-?,?)])]
+[17:23:02] [main/ERROR] (FabricLoader) Incompatible mod set!
+net.fabricmc.loader.impl.FormattedException: Mod resolution encountered an incompatible mod set!
+A potential solution has been determined:
+	 - Replace mod 'Emotecraft' (emotecraft) 2.2.7-b.build.47 with any version that is compatible with:
+		 - Other constraints that can''t be automatically determined
+Unmet dependency listing:
+	 - Mod 'Emotecraft' (emotecraft) 2.2.7-b.build.47 requires version 0.16.4 or later of fabric, which is missing!
+	 - Mod 'Emotecraft' (emotecraft) 2.2.7-b.build.47 requires any version of player-animator, which is missing!
+	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:51) ~[fabric-loader-0.14.19.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.14.19.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:148) ~[fabric-loader-0.14.19.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) [fabric-loader-0.14.19.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.14.19.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]

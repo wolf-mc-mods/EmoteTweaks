@@ -1,0 +1,221 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 7/31/23, 8:06 AM
+Description: mouseClicked event handler
+
+java.lang.NoClassDefFoundError: dev/bsmp/emotetweaks/util/forge/EmoteTweaksPropsImpl
+	at dev.bsmp.emotetweaks.util.EmoteTweaksProps.getGameDir(EmoteTweaksProps.java) ~[EmoteTweaks-1.0.0-dev.jar:?] {re:mixin,re:classloading}
+	at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.handler$zzb000$onConstruct(KeyframeAnimationPlayer.java:541) ~[player-animation-lib-forge-0.3.5+1.16.5.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+	at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.<init>(KeyframeAnimationPlayer.java:60) ~[player-animation-lib-forge-0.3.5+1.16.5.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.emotePlay.EmotePlayer.<init>(EmotePlayer.java:25) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading}
+	at io.github.kosmx.emotes.arch.emote.EmotePlayImpl.<init>(EmotePlayImpl.java:14) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading}
+	at net.minecraft.client.player.AbstractClientPlayer.playEmote(AbstractClientPlayer.java:551) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:emotecraft.mixins.json:EmotePlayerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at io.github.kosmx.emotes.main.network.ClientEmotePlay.clientStartLocalEmote(ClientEmotePlay.java:47) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:ClientEmotePlayMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:199) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:225) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.screen.ingame.FastMenuScreenLogic$FastMenuWidget.EmotesOnClick(FastMenuScreenLogic.java:79) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+	at io.github.kosmx.emotes.main.screen.widget.ModernChooseWheel.mouseClicked(ModernChooseWheel.java:138) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+	at io.github.kosmx.emotes.main.screen.widget.AbstractFastChooseWidget.emotes_mouseClicked(AbstractFastChooseWidget.java:53) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+	at io.github.kosmx.emotes.arch.gui.screen.IWidgetLogicImpl.mouseClicked(IWidgetLogicImpl.java:11) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:27) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:runtimedistcleaner:A}
+	at io.github.kosmx.emotes.arch.gui.screen.AbstractControlledModScreen.mouseClicked(AbstractControlledModScreen.java:142) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+	at net.minecraft.client.MouseHandler.method_1611(MouseHandler.java:87) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:427) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:85) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.MouseHandler.method_22686(MouseHandler.java:181) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:94) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.MouseHandler.method_22684(MouseHandler.java:180) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.2.2.jar:build 10] {}
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:102) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:306) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:997) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:607) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:38) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.1.3.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:94) [forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:219) [architectury-transformer-5.2.75-runtime.jar:5.2.75] {}
+Caused by: java.lang.ClassNotFoundException: dev.bsmp.emotetweaks.util.forge.EmoteTweaksPropsImpl
+	at java.lang.ClassLoader.findClass(ClassLoader.java:718) ~[?:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:587) ~[?:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:106) ~[modlauncher-8.1.3.jar:?] {re:classloading}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?] {}
+	... 42 more
+	Suppressed: java.lang.ClassNotFoundException
+		at cpw.mods.modlauncher.TransformingClassLoader$DelegatedClassLoader.findClass(TransformingClassLoader.java:282) ~[modlauncher-8.1.3.jar:?] {}
+		at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:136) ~[modlauncher-8.1.3.jar:?] {re:classloading}
+		at cpw.mods.modlauncher.TransformingClassLoader.loadClass(TransformingClassLoader.java:98) ~[modlauncher-8.1.3.jar:?] {re:classloading}
+		at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?] {}
+		at dev.bsmp.emotetweaks.util.EmoteTweaksProps.getGameDir(EmoteTweaksProps.java) ~[EmoteTweaks-1.0.0-dev.jar:?] {re:mixin,re:classloading}
+		at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.handler$zzb000$onConstruct(KeyframeAnimationPlayer.java:541) ~[player-animation-lib-forge-0.3.5+1.16.5.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+		at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.<init>(KeyframeAnimationPlayer.java:60) ~[player-animation-lib-forge-0.3.5+1.16.5.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+		at io.github.kosmx.emotes.main.emotePlay.EmotePlayer.<init>(EmotePlayer.java:25) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading}
+		at io.github.kosmx.emotes.arch.emote.EmotePlayImpl.<init>(EmotePlayImpl.java:14) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading}
+		at net.minecraft.client.player.AbstractClientPlayer.playEmote(AbstractClientPlayer.java:551) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:emotecraft.mixins.json:EmotePlayerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at io.github.kosmx.emotes.main.network.ClientEmotePlay.clientStartLocalEmote(ClientEmotePlay.java:47) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:ClientEmotePlayMixin,pl:mixin:A}
+		at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:199) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+		at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:225) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+		at io.github.kosmx.emotes.main.screen.ingame.FastMenuScreenLogic$FastMenuWidget.EmotesOnClick(FastMenuScreenLogic.java:79) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+		at io.github.kosmx.emotes.main.screen.widget.ModernChooseWheel.mouseClicked(ModernChooseWheel.java:138) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+		at io.github.kosmx.emotes.main.screen.widget.AbstractFastChooseWidget.emotes_mouseClicked(AbstractFastChooseWidget.java:53) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+		at io.github.kosmx.emotes.arch.gui.screen.IWidgetLogicImpl.mouseClicked(IWidgetLogicImpl.java:11) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+		at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:27) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:runtimedistcleaner:A}
+		at io.github.kosmx.emotes.arch.gui.screen.AbstractControlledModScreen.mouseClicked(AbstractControlledModScreen.java:142) ~[emotecraft-2.2.7-b.build.47+1.16.5-forge.jar:?] {re:classloading}
+		at net.minecraft.client.MouseHandler.method_1611(MouseHandler.java:87) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+		at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:427) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:85) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+		at net.minecraft.client.MouseHandler.method_22686(MouseHandler.java:181) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+		at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:94) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+		at net.minecraft.client.MouseHandler.method_22684(MouseHandler.java:180) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+		at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+		at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.2.2.jar:build 10] {}
+		at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+		at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:102) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at com.mojang.blaze3d.platform.Window.updateDisplay(Window.java:306) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at net.minecraft.client.Minecraft.runTick(Minecraft.java:997) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at net.minecraft.client.Minecraft.run(Minecraft.java:607) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+		at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+		at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+		at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+		at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+		at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:38) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+		at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.1.3.jar:?] {}
+		at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.1.3.jar:?] {}
+		at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.1.3.jar:?] {}
+		at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.1.3.jar:?] {}
+		at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.1.3.jar:?] {}
+		at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:94) [forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+		at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+		at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:219) [architectury-transformer-5.2.75-runtime.jar:5.2.75] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at dev.bsmp.emotetweaks.util.EmoteTweaksProps.getGameDir(EmoteTweaksProps.java) ~[generated_415a478:?] {re:mixin,re:classloading}
+	at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.handler$zzb000$onConstruct(KeyframeAnimationPlayer.java:541) ~[playeranimator:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+	at dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer.<init>(KeyframeAnimationPlayer.java:60) ~[playeranimator:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:KeyframeAnimationPlayerMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.emotePlay.EmotePlayer.<init>(EmotePlayer.java:25) ~[emotecraft:?] {re:mixin,re:classloading}
+	at io.github.kosmx.emotes.arch.emote.EmotePlayImpl.<init>(EmotePlayImpl.java:14) ~[emotecraft:?] {re:mixin,re:classloading}
+	at net.minecraft.client.player.AbstractClientPlayer.playEmote(AbstractClientPlayer.java:551) ~[forge:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:emotecraft.mixins.json:EmotePlayerMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at io.github.kosmx.emotes.main.network.ClientEmotePlay.clientStartLocalEmote(ClientEmotePlay.java:47) ~[emotecraft:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:ClientEmotePlayMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:199) ~[emotecraft:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.EmoteHolder.playEmote(EmoteHolder.java:225) ~[emotecraft:?] {re:mixin,re:classloading,pl:mixin:APP:EmoteTweaks.mixins.json:EmoteHolderMixin,pl:mixin:A}
+	at io.github.kosmx.emotes.main.screen.ingame.FastMenuScreenLogic$FastMenuWidget.EmotesOnClick(FastMenuScreenLogic.java:79) ~[emotecraft:?] {re:classloading}
+	at io.github.kosmx.emotes.main.screen.widget.ModernChooseWheel.mouseClicked(ModernChooseWheel.java:138) ~[emotecraft:?] {re:classloading}
+	at io.github.kosmx.emotes.main.screen.widget.AbstractFastChooseWidget.emotes_mouseClicked(AbstractFastChooseWidget.java:53) ~[emotecraft:?] {re:classloading}
+	at io.github.kosmx.emotes.arch.gui.screen.IWidgetLogicImpl.mouseClicked(IWidgetLogicImpl.java:11) ~[emotecraft:?] {re:classloading}
+	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:27) ~[forge:?] {re:computing_frames,pl:runtimedistcleaner:A,re:classloading,pl:runtimedistcleaner:A}
+	at io.github.kosmx.emotes.arch.gui.screen.AbstractControlledModScreen.mouseClicked(AbstractControlledModScreen.java:142) ~[emotecraft:?] {re:classloading}
+	at net.minecraft.client.MouseHandler.method_1611(MouseHandler.java:87) ~[forge:?] {re:classloading,pl:runtimedistcleaner:A}
+-- Affected screen --
+Details:
+	Screen name: io.github.kosmx.emotes.arch.gui.screen.ingame.FastChosseScreen
+Stacktrace:
+	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:427) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:85) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.MouseHandler.method_22686(MouseHandler.java:181) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:94) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.MouseHandler.method_22684(MouseHandler.java:180) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:runtimedistcleaner:A}
+	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:36) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.2.2.jar:build 10] {}
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101) ~[lwjgl-glfw-3.2.2.jar:build 10] {}
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:102) ~[forge:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/152, l='ClientLevel', x=-124.31, y=66.00, z=251.19]]
+	Chunk stats: Client Chunk Cache: 841, 523
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-128,65,256), Chunk: (at 0,4,0 in -8,16; contains blocks -128,0,256 to -113,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 560 game time, 560 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:458) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:architectury.mixins.json:MixinClientLevel,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2031) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:623) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:184) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.userdev.FMLUserdevClientLaunchProvider.lambda$launchService$0(FMLUserdevClientLaunchProvider.java:38) ~[forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:82) [modlauncher-8.1.3.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) [modlauncher-8.1.3.jar:?] {}
+	at net.minecraftforge.userdev.LaunchTesting.main(LaunchTesting.java:94) [forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.mappings.1_16_5.layered+hash.40359-v2-forge-1.16.5-36.2.39.jar:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:219) [architectury-transformer-5.2.75-runtime.jar:5.2.75] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.6, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1670798856 bytes (1593 MB) / 2512388096 bytes (2396 MB) up to 4246732800 bytes (4050 MB)
+	CPUs: 12
+	JVM Flags: 1 total; -XX:+IgnoreUnrecognizedVMOptions
+	ModLauncher: 8.1.3+8.1.3+main-8.1.x.c94d18ec
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/mixin-patched-0.8.4.10.jar mixin PLUGINSERVICE 
+		/eventbus-4.0.0.jar eventbus PLUGINSERVICE 
+		/forge-1.16.5-36.2.39-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.2.39-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		/accesstransformers-3.0.1.jar accesstransformer PLUGINSERVICE 
+		/forge-1.16.5-36.2.39-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.16.5-36.2.39-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/mixin-patched-0.8.4.10.jar mixin TRANSFORMATIONSERVICE 
+		/architectury-loom-runtime-1.1.8.jar ForgeLoomMixinRemapperInjector TRANSFORMATIONSERVICE 
+		/forge-1.16.5-36.2.39-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 36.2
+	Forge: net.minecraftforge:36.2.39
+	FML Language Providers: 
+		javafml@36.2
+		minecraft@1
+	Mod List: 
+		forge-client-extra.jar                            |Minecraft                     |minecraft                     |1.16.5              |DONE      |Manifest: NOSIGNATURE
+		simple-voice-chat-forge-1.16.5-2.4.16.jar         |Simple Voice Chat             |voicechat                     |1.16.5-2.4.16       |DONE      |Manifest: NOSIGNATURE
+		forge-1.16.5-36.2.39-minecraft-merged-1.16.5-loom.|Forge                         |forge                         |36.2.39             |DONE      |Manifest: NOSIGNATURE
+		11393371978534712385.jar                          |generated_415a478             |generated_415a478             |1                   |DONE      |Manifest: NOSIGNATURE
+		architectury-forge-1.32.67.jar                    |Architectury                  |architectury                  |1.32.67             |DONE      |Manifest: NOSIGNATURE
+		main                                              |Emote Tweaks                  |emotetweaks                   |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		emotecraft-2.2.7-b.build.47+1.16.5-forge.jar      |Emotecraft                    |emotecraft                    |2.2.7-b.build.47    |DONE      |Manifest: NOSIGNATURE
+		player-animation-lib-forge-0.3.5+1.16.5.jar       |Player Animator               |playeranimator                |0.3.5+1.16.5        |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: ab70b0dd-1ddc-4f4c-aec4-3bd092779440
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: NVIDIA GeForce RTX 3060/PCIe/SSE2 GL version 4.6.0 NVIDIA 536.67, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 12x 12th Gen Intel(R) Core(TM) i5-12400F
