@@ -3,8 +3,6 @@ plugins {
     id "me.shedaniel.unified-publishing"
 }
 
-version = rootProject.mod_version
-
 architectury {
     platformSetupLoomIde()
     fabric()
