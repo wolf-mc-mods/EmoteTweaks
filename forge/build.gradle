@@ -87,14 +87,11 @@ unifiedPublishing {
 
         relations {
             depends {
-                curseforge {
-                    emotecraft-forge
-                    simple-voice-chat
-                }
-                modrinth {
-                    emotecraft
-                    simple-voice-chat
-                }
+                curseforge = "emotecraft-forge"
+                curseforge = modrinth = "simple-voice-chat"
+                modrinth = "emotecraft"
+
+
             }
         }
 
