@@ -88,10 +88,10 @@ unifiedPublishing {
         relations {
             depends {
                 curseforge = "emotecraft-forge"
-                curseforge = modrinth = "simple-voice-chat"
                 modrinth = "emotecraft"
-
-
+            }
+            depends {
+                curseforge = modrinth = "simple-voice-chat"
             }
         }
 
