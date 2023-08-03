@@ -8,14 +8,6 @@ architectury {
     forge()
 }
 
-configurations {
-    shadowCommon
-    dev
-}
-
-artifacts {
-    dev(jar)
-}
 
 loom {
     //accessWidenerPath = project(":common").loom.accessWidenerPath
@@ -30,11 +22,16 @@ loom {
 }
 
 configurations {
+    dev
     common
     shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentForge.extendsFrom common
+}
+
+artifacts {
+    dev(jar)
 }
 
 dependencies {
@@ -75,7 +72,6 @@ remapJar {
     from rootProject.file("LICENSE.md")
 }
 
-
 unifiedPublishing {
     project {
         displayName = "[Forge $rootProject.minecraft_version] v$project.version"
@@ -92,6 +88,9 @@ unifiedPublishing {
             }
             depends {
                 curseforge = modrinth = "simple-voice-chat"
+            }
+            depends {
+                curseforge = modrinth = "architectury-api"
             }
         }
 

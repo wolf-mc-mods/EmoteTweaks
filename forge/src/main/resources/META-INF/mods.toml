@@ -7,7 +7,7 @@ license = "MIT License"
 modId = "emotetweaks"
 version = "${version}"
 displayName = "Emote Tweaks"
-authors = "RyanV"
+authors = "RyanV, Wolfie"
 description = '''Mod for allowing some Tweaked functionality of EmoteCraft'''
 #logoFile = ""
 
