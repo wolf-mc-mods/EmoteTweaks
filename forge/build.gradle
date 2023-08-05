@@ -80,6 +80,10 @@ jar {
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar
+    from project(":common").sourcesJar {
+        exclude('META-INF/mods.toml')
+        exclude('pack.mcmeta')
+    }
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
 }
