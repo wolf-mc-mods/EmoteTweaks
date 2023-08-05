@@ -9,11 +9,12 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
 
-    modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
-    modApi "dev.kosmx.player-anim:player-animation-lib:${rootProject.player_animation_lib}"
     modApi "de.maxhenkel.voicechat:voicechat-api:${rootProject.voicechat_api}"
     modApi "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
-    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-fabric"
+
+    modApi "dev.kosmx.player-anim:player-animation-lib:${rootProject.player_animation_lib}"
+    modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
+    modImplementation "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-fabric"
 
 }
 

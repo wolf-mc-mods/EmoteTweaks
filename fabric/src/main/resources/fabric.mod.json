@@ -28,6 +28,6 @@
     "minecraft": "1.16.5",
     "emotecraft": "2.2.7-b.build.47",
     "voicechat": ">=1.16.5-2.3.3",
-    "architectury-api": ">=1.32.67"
+    "architectury": ">=1.32.67"
   }
 }
