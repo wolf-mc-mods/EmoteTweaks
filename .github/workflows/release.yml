@@ -9,6 +9,8 @@ on:
       - '.github/**'
     branches:
       - master
+      - 1605
+      - 1802
 
 jobs:
   build:
