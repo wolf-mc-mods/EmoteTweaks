@@ -25,9 +25,9 @@
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "1.16.5",
-    "emotecraft": "2.2.7-b.build.47",
-    "voicechat": ">=1.16.5-2.3.3",
-    "architectury": ">=1.32.67"
+    "minecraft": "${mc_version}",
+    "emotecraft": "${ec_version}",
+    "voicechat": ">=${vc_version}",
+    "architectury": ">=${arch_version}"
   }
 }

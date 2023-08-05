@@ -37,14 +37,14 @@ artifacts {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury-forge:${rootProject.architectury_version}"
+    modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
 
     modApi "de.maxhenkel.voicechat:voicechat-api:${rootProject.voicechat_api}"
     modApi "maven.modrinth:simple-voice-chat:forge-${rootProject.voicechat}"
 
     modApi "dev.kosmx.player-anim:player-animation-lib-forge:${rootProject.player_animation_lib}"
     modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
-    modImplementation "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-forge"
+    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-fabric"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

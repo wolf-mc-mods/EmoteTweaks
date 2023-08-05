@@ -20,14 +20,14 @@ dependencies {
     modApi "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury-fabric:${rootProject.architectury_version}"
+    modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
     modApi "de.maxhenkel.voicechat:voicechat-api:${rootProject.voicechat_api}"
     modApi "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
 
     modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
     modApi "dev.kosmx.player-anim:player-animation-lib-fabric:${rootProject.player_animation_lib}"
-    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-fabric"
+    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-fabric"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -36,8 +36,16 @@ dependencies {
 processResources {
     inputs.property "version", project.version
 
+    def versionsToReplace = [
+            "version"       : project.version,
+            "mc_version"    : rootProject.minecraft_version,
+            "ec_version"    : rootProject.emotecraft,
+            "vc_version"    : rootProject.voicechat,
+            "arch_version"  : rootProject.architectury_version,
+    ]
+
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        expand versionsToReplace
     }
 }
 

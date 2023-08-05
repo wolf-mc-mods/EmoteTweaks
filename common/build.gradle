@@ -7,14 +7,14 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     // Remove the next line if you don't want to depend on the API
-    modApi "me.shedaniel:architectury:${rootProject.architectury_version}"
+    modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
     modApi "de.maxhenkel.voicechat:voicechat-api:${rootProject.voicechat_api}"
     modApi "maven.modrinth:simple-voice-chat:fabric-${rootProject.voicechat}"
 
     modApi "dev.kosmx.player-anim:player-animation-lib:${rootProject.player_animation_lib}"
     modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
-    modImplementation "maven.modrinth:emotecraft:${rootProject.emotecraft}+1.16.5-fabric"
+    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-fabric"
 
 }
 

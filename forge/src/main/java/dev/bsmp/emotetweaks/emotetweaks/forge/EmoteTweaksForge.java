@@ -1,14 +1,14 @@
 package dev.bsmp.emotetweaks.emotetweaks.forge;
 
+import dev.architectury.platform.forge.EventBuses;
 import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import dev.bsmp.emotetweaks.emotetweaks.client.EmoteTweaksClient;
 import dev.bsmp.emotetweaks.voicefx.forge.SFXPacket;
-import me.shedaniel.architectury.platform.forge.EventBuses;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.network.NetworkRegistry;
-import net.minecraftforge.fml.network.simple.SimpleChannel;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.simple.SimpleChannel;
 
 @Mod(EmoteTweaksMain.MOD_ID)
 public class EmoteTweaksForge {
