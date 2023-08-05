@@ -1,7 +1,7 @@
-package dev.bsmp.emotetweaks.emotetweaks;
+package dev.bsmp.emotetweaks.emotetweaks.fabric;
 
 import dev.bsmp.emotetweaks.emotetweaks.client.EmoteTweaksClient;
-import dev.bsmp.emotetweaks.voicefx.SFXPacket;
+import dev.bsmp.emotetweaks.voicefx.fabric.SFXPacket;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.resources.ResourceLocation;

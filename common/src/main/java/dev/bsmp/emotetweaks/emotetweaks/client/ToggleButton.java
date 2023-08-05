@@ -1,6 +1,6 @@
 package dev.bsmp.emotetweaks.emotetweaks.client;
 
-import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaks;
+import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import dev.bsmp.emotetweaks.emotetweaks.IEmoteScreen;
 import io.github.kosmx.emotes.arch.gui.screen.IButtonImpl;
 import io.github.kosmx.emotes.main.screen.EmoteMenu;
@@ -28,7 +28,7 @@ public class ToggleButton extends IButtonImpl {
         parent.save = true;
         setMessage(new TextComponent(""+currentState));
         UUID uuid = ((IEmoteScreen)parent).getEmoteList().getSelectedEntry().getEmote().getUuid();
-        EmoteTweaks.CROUCH_CANCEL_MAP.put(uuid, currentState);
+        EmoteTweaksMain.CROUCH_CANCEL_MAP.put(uuid, currentState);
     }
 
     public boolean getCurrentState() {

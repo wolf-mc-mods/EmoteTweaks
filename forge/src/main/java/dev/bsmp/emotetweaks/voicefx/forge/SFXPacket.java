@@ -1,16 +1,15 @@
-package dev.bsmp.emotetweaks.voicefx;
+package dev.bsmp.emotetweaks.voicefx.forge;
 
 import de.maxhenkel.voicechat.Voicechat;
 import de.maxhenkel.voicechat.api.events.SoundPacketEvent;
 import de.maxhenkel.voicechat.voice.common.LocationSoundPacket;
 import de.maxhenkel.voicechat.voice.server.ServerWorldUtils;
-import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.network.ServerGamePacketListenerImpl;
+import net.minecraftforge.fml.network.NetworkEvent;
 
 import java.util.UUID;
+import java.util.function.Supplier;
 
 public class SFXPacket {
     UUID uuid;
@@ -34,22 +33,25 @@ public class SFXPacket {
         return new SFXPacket(buf.readUUID(), buf.readByteArray(), buf.readLong());
     }
 
-    public static void handleMessage(MinecraftServer minecraftServer, ServerPlayer serverPlayer, ServerGamePacketListenerImpl serverGamePacketListener, FriendlyByteBuf PacketByteBuf, PacketSender packetSender) {
-        UUID uuid = PacketByteBuf.readUUID();
-        byte[] frame = PacketByteBuf.readByteArray();
-        long sequenceNumber = PacketByteBuf.readLong();
+    public static void handleMessage(SFXPacket msg, Supplier<NetworkEvent.Context> contextSupplier) {
+        UUID uuid = msg.uuid;
+        byte[] frame = msg.frame;
+        long sequenceNumber = msg.sequenceNumber;
+        ServerPlayer player = contextSupplier.get().getSender();
 
 
+        contextSupplier.get().enqueueWork(() -> {
             //ToDo: Check Distance and maybe add custom category for EmoteFX?
-            LocationSoundPacket packet = new LocationSoundPacket(uuid, serverPlayer.position(), frame, sequenceNumber, 15f, null);
+            LocationSoundPacket packet = new LocationSoundPacket(uuid, player.position(), frame, sequenceNumber, 15f, null);
             Voicechat.SERVER.getServer().broadcast(
-                    ServerWorldUtils.getPlayersInRange(serverPlayer.getLevel(), serverPlayer.position(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> p != serverPlayer),
+                    ServerWorldUtils.getPlayersInRange(player.getLevel(), player.position(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> p != player),
 //                ServerWorldUtils.getPlayersInRange(serverPlayer.getWorld(), serverPlayer.getPos(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> true),
                     packet,
                     null, null, null,
                     SoundPacketEvent.SOURCE_PROXIMITY
             );
-
+        });
+        contextSupplier.get().setPacketHandled(true);
     }
 
 }

@@ -5,13 +5,13 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class EmoteTweaks {
+public class EmoteTweaksMain {
     public static final String MOD_ID = "emotetweaks";
 
     public static HashMap<Integer, String> MODIFIERS = new HashMap<>();
     public static Object2BooleanOpenHashMap<UUID> CROUCH_CANCEL_MAP = new Object2BooleanOpenHashMap<>();
 
-    public EmoteTweaks() {
+    public EmoteTweaksMain() {
         MODIFIERS.put(1, "SHIFT");
         MODIFIERS.put(2, "CTRL");
         MODIFIERS.put(4, "L ALT");

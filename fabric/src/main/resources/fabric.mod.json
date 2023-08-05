@@ -13,7 +13,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksFabric"
+      "dev.bsmp.emotetweaks.emotetweaks.fabric.EmoteTweaksFabric"
     ],
     "voicechat": [
       "dev.bsmp.emotetweaks.voicefx.SoundPlugin"

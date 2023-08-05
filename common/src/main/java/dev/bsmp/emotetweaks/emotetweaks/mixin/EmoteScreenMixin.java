@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaks;
+import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import dev.bsmp.emotetweaks.emotetweaks.IEmoteScreen;
 import dev.bsmp.emotetweaks.emotetweaks.IMixedKey;
 import io.github.kosmx.emotes.arch.executor.types.TextImpl;
@@ -57,7 +57,7 @@ public abstract class EmoteScreenMixin<MATRIX, SCREEN, WIDGET> extends AbstractS
         if(lastEntry != selected) {
             lastEntry = selected;
             if (selected != null) {
-                boolean ignoreCrouch = EmoteTweaks.CROUCH_CANCEL_MAP.getBoolean(emoteList.getSelectedEntry().getEmote().getEmote().get());
+                boolean ignoreCrouch = EmoteTweaksMain.CROUCH_CANCEL_MAP.getBoolean(emoteList.getSelectedEntry().getEmote().getEmote().get());
                 this.crouchToggleButton.setCurrentState(ignoreCrouch);
             }
         }

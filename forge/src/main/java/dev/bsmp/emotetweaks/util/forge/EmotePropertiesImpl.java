@@ -1,7 +1,7 @@
 package dev.bsmp.emotetweaks.util.forge;
 
-import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksForge;
-import dev.bsmp.emotetweaks.voicefx.SFXPacket;
+import dev.bsmp.emotetweaks.emotetweaks.forge.EmoteTweaksForge;
+import dev.bsmp.emotetweaks.voicefx.forge.SFXPacket;
 import net.minecraftforge.fml.loading.FMLLoader;
 
 import java.nio.file.Path;

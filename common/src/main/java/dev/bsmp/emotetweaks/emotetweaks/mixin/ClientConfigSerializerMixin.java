@@ -11,10 +11,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Map;
 import java.util.UUID;
 
-import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaks;
-import dev.kosmx.playerAnim.core.util.Pair;
+import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import io.github.kosmx.emotes.common.SerializableConfig;
-import io.github.kosmx.emotes.executor.dataTypes.InputKey;
 import io.github.kosmx.emotes.main.config.ClientConfig;
 import io.github.kosmx.emotes.main.config.ClientConfigSerializer;
 
@@ -28,7 +26,7 @@ public abstract class ClientConfigSerializerMixin {
 
     private void crouchCancelDeserializer(JsonElement node) {
         for(Map.Entry<String, JsonElement> element : node.getAsJsonObject().entrySet()) {
-            EmoteTweaks.CROUCH_CANCEL_MAP.put(UUID.fromString(element.getKey()), element.getValue().getAsBoolean());
+            EmoteTweaksMain.CROUCH_CANCEL_MAP.put(UUID.fromString(element.getKey()), element.getValue().getAsBoolean());
         }
     }
 
@@ -39,7 +37,7 @@ public abstract class ClientConfigSerializerMixin {
 
     private JsonElement crouchCancelSerializer() {
         JsonObject array = new JsonObject();
-        for(Map.Entry<UUID, Boolean> entry : EmoteTweaks.CROUCH_CANCEL_MAP.object2BooleanEntrySet()){
+        for(Map.Entry<UUID, Boolean> entry : EmoteTweaksMain.CROUCH_CANCEL_MAP.object2BooleanEntrySet()){
             array.addProperty(entry.getKey().toString(), entry.getValue());
         }
         return array;

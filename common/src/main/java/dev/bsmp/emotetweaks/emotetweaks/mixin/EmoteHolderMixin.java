@@ -6,9 +6,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import com.mojang.blaze3d.platform.InputConstants;
-import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaks;
+import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import dev.bsmp.emotetweaks.emotetweaks.IMixedKey;
 import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
 import dev.kosmx.playerAnim.core.util.MathHelper;
@@ -27,8 +26,8 @@ public abstract class EmoteHolderMixin {
 
     @Inject(method = "playEmote(Ldev/kosmx/playerAnim/core/data/KeyframeAnimation;Lio/github/kosmx/emotes/executor/emotePlayer/IEmotePlayerEntity;Lio/github/kosmx/emotes/main/EmoteHolder;)Z", at = @At("HEAD"), cancellable = true)
     private static void attachData(KeyframeAnimation emote, IEmotePlayerEntity player, EmoteHolder emoteHolder, CallbackInfoReturnable<Boolean> cir) {
-        if(EmoteTweaks.CROUCH_CANCEL_MAP.containsKey(emote.get())) {
-            boolean b = EmoteTweaks.CROUCH_CANCEL_MAP.getBoolean(emote.get());
+        if(EmoteTweaksMain.CROUCH_CANCEL_MAP.containsKey(emote.get())) {
+            boolean b = EmoteTweaksMain.CROUCH_CANCEL_MAP.getBoolean(emote.get());
             if(b)
                 cir.setReturnValue(ClientEmotePlay.clientStartLocalEmote(emote));
         }

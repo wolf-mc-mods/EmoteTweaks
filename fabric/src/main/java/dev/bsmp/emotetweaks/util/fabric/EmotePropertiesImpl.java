@@ -8,7 +8,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import java.nio.file.Path;
 import java.util.UUID;
 
-import static dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksFabric.PACKET_ID;
+import static dev.bsmp.emotetweaks.emotetweaks.fabric.EmoteTweaksFabric.PACKET_ID;
 
 public class EmotePropertiesImpl {
     public static void dataToServer(UUID uuid, byte[] frame, long sequenceNumber) {
