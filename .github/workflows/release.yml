@@ -28,7 +28,7 @@ jobs:
       - name: Grant execute permission for gradle
         run: chmod +x gradlew
 
-      - name: Upload to CurseForge
+      - name: Upload to CF & Modrinth
         run: ./gradlew publish modPublish --stacktrace
         if: |
           !contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.pull_request.title, '[ci skip]')
