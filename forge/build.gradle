@@ -44,7 +44,7 @@ dependencies {
 
     modApi "dev.kosmx.player-anim:player-animation-lib-forge:${rootProject.player_animation_lib}"
     modApi "io.github.kosmx.emotes:emotesMain:${rootProject.emotecraft}"
-    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-fabric"
+    modApi "maven.modrinth:emotecraft:${rootProject.emotecraft}+${rootProject.minecraft_version}-forge"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -80,10 +80,6 @@ jar {
 
 sourcesJar {
     def commonSources = project(":common").sourcesJar
-    from project(":common").sourcesJar {
-        exclude('META-INF/mods.toml')
-        exclude('pack.mcmeta')
-    }
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
 }
@@ -98,7 +94,7 @@ unifiedPublishing {
     project {
         displayName = "[Forge $rootProject.minecraft_version] v$project.version"
         releaseType = "release"
-        gameVersions = ["1.16.5"]
+        gameVersions = ["1.19.4"]
         gameLoaders = ["forge"]
 
         mainPublication remapJar
@@ -120,7 +116,7 @@ unifiedPublishing {
             curseforge {
                 token = project.hasProperty("curse_api_key") ? project.property("curse_api_key") : System.getenv("curse_api_key")
                 id = project.curseforge_id
-                gameVersions.addAll "Java 8"
+                gameVersions.addAll "Java 17"
             }
         }
 

@@ -1,16 +1,9 @@
 package dev.bsmp.emotetweaks.emotetweaks.mixin;
 
-import dev.bsmp.emotetweaks.emotetweaks.client.ToggleButton;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
 import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
 import dev.bsmp.emotetweaks.emotetweaks.IEmoteScreen;
 import dev.bsmp.emotetweaks.emotetweaks.IMixedKey;
+import dev.bsmp.emotetweaks.emotetweaks.client.ToggleButton;
 import io.github.kosmx.emotes.arch.executor.types.TextImpl;
 import io.github.kosmx.emotes.executor.EmoteInstance;
 import io.github.kosmx.emotes.executor.dataTypes.InputKey;
@@ -18,7 +11,13 @@ import io.github.kosmx.emotes.main.screen.AbstractScreenLogic;
 import io.github.kosmx.emotes.main.screen.EmoteMenu;
 import io.github.kosmx.emotes.main.screen.IScreenSlave;
 import io.github.kosmx.emotes.main.screen.widget.IEmoteListWidgetHelper;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = EmoteMenu.class, remap = false)
 public abstract class EmoteScreenMixin<MATRIX, SCREEN, WIDGET> extends AbstractScreenLogic<MATRIX, SCREEN> implements IEmoteScreen {
@@ -62,7 +61,7 @@ public abstract class EmoteScreenMixin<MATRIX, SCREEN, WIDGET> extends AbstractS
             }
         }
 
-        textDraw(matrices, new TextImpl(new TextComponent("Ignore Sneaking:").plainCopy()), screen.getWidth() / 2 + 8, 100, 0xFFFFFF);
+        textDraw(matrices, new TextImpl(Component.literal("Ignore Sneaking:").plainCopy()), screen.getWidth() / 2 + 8, 100, 0xFFFFFF);
     }
 
     @Inject(method = "saveConfig", at = @At("HEAD"))
