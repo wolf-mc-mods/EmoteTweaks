@@ -11,6 +11,7 @@ on:
       - master
       - 1605
       - 1802
+      - 1904
 
 jobs:
   build:
