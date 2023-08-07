@@ -26,8 +26,8 @@
     "fabricloader": ">=0.14.9",
     "fabric": "*",
     "minecraft": ["1.19.*"],
-    "emotecraft": "${ec_version}",
+    "emotecraft": [">=2.2.7-b.build.48"],
     "voicechat": ["1.19-2.4.8", "1.19.1-2.4.8", "1.19.2-2.4.16", "1.19.3-2.4.11", "1.19.4-2.4.16"],
-    "architectury": ">=${arch_version}"
+    "architectury": [">=5.14.84", ">=6.5.85", ">=7.1.86", ">=8.2.89"]
   }
 }

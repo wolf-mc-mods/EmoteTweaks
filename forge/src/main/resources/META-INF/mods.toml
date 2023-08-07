@@ -14,20 +14,34 @@ description = '''Mod for allowing some Tweaked functionality of EmoteCraft'''
 [[dependencies.emotetweaks]]
 modId = "forge"
 mandatory = true
-versionRange = "[45,)"
+versionRange = "[41,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.emotetweaks]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.4,)"
+versionRange = "[1.19,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.emotetweaks]]
 modId = "architectury"
 mandatory = true
-versionRange = "[8.1.79,)"
+versionRange = "[5.14.84,), [6.5.85,), [7.1.86,), [8.2.89,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.emotetweaks]]
+modId = "voicechat"
+mandatory = true
+versionRange = "[1.19-2.4.8,), [1.19.1-2.4.8,), [1.19.2-2.4.16,), [1.19.3-2.4.11,), [1.19.4-2.4.16,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.emotetweaks]]
+modId = "emotecraft"
+mandatory = true
+versionRange = "[2.2.7-b.build,)"
 ordering = "AFTER"
 side = "BOTH"
