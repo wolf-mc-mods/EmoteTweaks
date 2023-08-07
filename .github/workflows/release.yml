@@ -8,7 +8,7 @@ on:
       - '**/src/**'
       - '.github/**'
     branches:
-      - master
+      - 1605
 
 jobs:
   build:
