@@ -2,7 +2,6 @@ package dev.bsmp.emotetweaks.emotetweaks.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain;
-import dev.bsmp.emotetweaks.emotetweaks.client.EmoteTweaksClient;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -11,7 +10,7 @@ public class EmoteTweaksForge {
 
     public EmoteTweaksForge() {
         EventBuses.registerModEventBus(EmoteTweaksMain.MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
-        EmoteTweaksClient.onInitializeClient();
+        new EmoteTweaksMain();
     }
 
 }

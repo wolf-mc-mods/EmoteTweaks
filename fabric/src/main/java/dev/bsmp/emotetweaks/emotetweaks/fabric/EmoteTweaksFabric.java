@@ -9,7 +9,6 @@ public class EmoteTweaksFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        EmoteTweaksClient.onInitializeClient();
         new EmoteTweaksMain();
     }
 
