@@ -11,9 +11,4 @@ public class EmoteProperties {
     public static Path getGameDir() {
         throw new AssertionError();
     }
-
-    @ExpectPlatform
-    public static void dataToServer(UUID uuid, byte[] frame, long sequenceNumber) {
-        throw new AssertionError();
-    }
 }

@@ -1,6 +1,10 @@
 package dev.bsmp.emotetweaks.emotetweaks;
 
+import dev.architectury.networking.NetworkChannel;
+import dev.architectury.networking.NetworkManager;
+import dev.bsmp.emotetweaks.voicefx.SFXPacket;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -8,6 +12,7 @@ import java.util.UUID;
 public class EmoteTweaksMain {
     public static final String MOD_ID = "emotetweaks";
 
+    public static ResourceLocation PACKET_ID = new ResourceLocation("emotecraft", "main");
     public static HashMap<Integer, String> MODIFIERS = new HashMap<>();
     public static Object2BooleanOpenHashMap<UUID> CROUCH_CANCEL_MAP = new Object2BooleanOpenHashMap<>();
 
@@ -17,6 +22,8 @@ public class EmoteTweaksMain {
         MODIFIERS.put(4, "L ALT");
         MODIFIERS.put(6, "R ALT");
 
+
+        NetworkManager.registerReceiver(NetworkManager.c2s(), PACKET_ID, SFXPacket::handleMessage);
     }
 
 }
