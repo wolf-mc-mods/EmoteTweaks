@@ -44,7 +44,7 @@ public class SFXPacket {
             //ToDo: Check Distance and maybe add custom category for EmoteFX?
             LocationSoundPacket packet = new LocationSoundPacket(uuid, player.position(), frame, sequenceNumber, 15f, null);
             Voicechat.SERVER.getServer().broadcast(
-                    ServerWorldUtils.getPlayersInRange(player.getLevel(), player.position(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> p != player),
+                    ServerWorldUtils.getPlayersInRange(player.serverLevel(), player.position(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> p != player),
 //                ServerWorldUtils.getPlayersInRange(serverPlayer.getWorld(), serverPlayer.getPos(), Voicechat.SERVER_CONFIG.voiceChatDistance.get(), p -> true),
                     packet,
                     null, null, null,
