@@ -59,7 +59,7 @@ public class SFXThread extends Thread {
                 buf.writeLong(framePosition);
 
                 NetworkManager.sendToServer(PACKET_ID, buf);
-                System.out.println("Sent Packet");
+
                 short[] finalFrame = frame;
 
                 Minecraft.getInstance().execute(() -> ClientManager.getClient().processSoundPacket(new LocationSoundPacket(uuid, finalFrame, Minecraft.getInstance().player.position(), 15f, null)));
