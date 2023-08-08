@@ -12,8 +12,4 @@ public class EmoteProperties {
         throw new AssertionError();
     }
 
-    @ExpectPlatform
-    public static void dataToServer(UUID uuid, byte[] frame, long sequenceNumber) {
-        throw new AssertionError();
-    }
 }
