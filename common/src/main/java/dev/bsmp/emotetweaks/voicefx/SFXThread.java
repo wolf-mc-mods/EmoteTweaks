@@ -4,13 +4,17 @@ import de.maxhenkel.voicechat.Voicechat;
 import de.maxhenkel.voicechat.api.opus.OpusEncoder;
 import de.maxhenkel.voicechat.voice.client.ClientManager;
 import de.maxhenkel.voicechat.voice.common.LocationSoundPacket;
-import dev.bsmp.emotetweaks.util.EmoteProperties;
+import dev.architectury.networking.NetworkManager;
+import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.FriendlyByteBuf;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.util.UUID;
+
+import static dev.bsmp.emotetweaks.emotetweaks.EmoteTweaksMain.PACKET_ID;
 
 public class SFXThread extends Thread {
 
@@ -46,7 +50,12 @@ public class SFXThread extends Thread {
                 }
 
                 //Send Data Packet
-                EmoteProperties.dataToServer(uuid, encoder.encode(frame), framePosition);
+                FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+                buf.writeUUID(uuid);
+                buf.writeByteArray(encoder.encode(frame));
+                buf.writeLong(framePosition);
+
+                NetworkManager.sendToServer(PACKET_ID, buf);
 
                 short[] finalFrame = frame;
 
