@@ -1,6 +1,5 @@
 package dev.bsmp.emotetweaks.emotetweaks;
 
-import dev.architectury.networking.NetworkChannel;
 import dev.architectury.networking.NetworkManager;
 import dev.bsmp.emotetweaks.voicefx.SFXPacket;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;

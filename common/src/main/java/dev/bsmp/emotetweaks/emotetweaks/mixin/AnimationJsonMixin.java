@@ -3,21 +3,18 @@ package dev.bsmp.emotetweaks.emotetweaks.mixin;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-
+import dev.bsmp.emotetweaks.emotetweaks.SoundFrame;
+import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
+import dev.kosmx.playerAnim.core.data.gson.AnimationJson;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import dev.bsmp.emotetweaks.emotetweaks.SoundFrame;
-import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
-import dev.kosmx.playerAnim.core.data.gson.AnimationJson;
 
 @Mixin(value = AnimationJson.class, remap = false)
 public class AnimationJsonMixin {

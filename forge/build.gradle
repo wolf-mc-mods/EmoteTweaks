@@ -28,6 +28,7 @@ configurations {
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentForge.extendsFrom common
+
 }
 
 artifacts {
@@ -63,19 +64,19 @@ shadowJar {
     exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier.set "dev-shadow"
 }
 
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier "forge"
+    archiveClassifier.set "forge"
 
     from rootProject.file("LICENSE.md")
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier.set "dev"
 }
 
 sourcesJar {

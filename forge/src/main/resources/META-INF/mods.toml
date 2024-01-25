@@ -14,7 +14,7 @@ description = '''Mod for allowing some Tweaked functionality of EmoteCraft'''
 [[dependencies.emotetweaks]]
 modId = "forge"
 mandatory = true
-versionRange = "[41,)"
+versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -35,7 +35,7 @@ side = "BOTH"
 [[dependencies.emotetweaks]]
 modId = "voicechat"
 mandatory = true
-versionRange = "[1.20-2.4.9,), [1.20.1-2.4.16,)"
+versionRange = "[1.20-2.4.9,), [1.20.1-2.4.32,)"
 ordering = "AFTER"
 side = "BOTH"
 
