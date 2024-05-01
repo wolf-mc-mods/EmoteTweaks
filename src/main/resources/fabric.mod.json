@@ -5,15 +5,17 @@
   "name": "EmoteTweaks",
   "description": "Mod for allowing some Tweaked functionality of EmoteCraft",
   "authors": [
-    "RyanV",
-    "Wolfie"
+    "RyanV"
   ],
   "contact": {},
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
+    "client": [
+      "dev.bsmp.emotetweaks.emotetweaks.client.EmoteTweaksClient"
+    ],
     "main": [
-      "dev.bsmp.emotetweaks.emotetweaks.fabric.EmoteTweaksFabric"
+      "dev.bsmp.emotetweaks.emotetweaks.EmoteTweaks"
     ],
     "voicechat": [
       "dev.bsmp.emotetweaks.voicefx.SoundPlugin"
@@ -25,9 +27,8 @@
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "${mc_version}",
-    "emotecraft": "${ec_version}",
-    "voicechat": ">=${vc_version}",
-    "architectury": ">=${arch_version}"
+    "minecraft": "1.19.4",
+    "emotecraft": "2.2.7-b.build.50",
+    "voicechat": ">=1.18.2-2.3.10"
   }
 }
