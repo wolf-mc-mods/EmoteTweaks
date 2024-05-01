@@ -8,7 +8,7 @@ on:
       - '**/src/**'
       - '.github/**'
     branches:
-      - 1802
+      - 1802-fabric
 
 jobs:
   build:
