@@ -2,7 +2,6 @@ plugins {
     id 'fabric-loom' version '1.0-SNAPSHOT'
     id "me.shedaniel.unified-publishing" version "0.1.+"
     id "com.github.breadmoirai.github-release" version "2.4.1"
-    id "maven-publish"
 }
 
 def runNumber = (System.getenv("GITHUB_RUN_NUMBER") == null ? "9999" : System.getenv('GITHUB_RUN_NUMBER'))
@@ -114,7 +113,7 @@ unifiedPublishing {
             modrinth {
                 token = project.hasProperty("modrinth_key") ? project.property("modrinth_key") : System.getenv("modrinth_key")
                 id = project.modrinth_id
-                version = "$project.version+$project.name"
+                version = "$project.version+Fabric"
             }
         }
     }
