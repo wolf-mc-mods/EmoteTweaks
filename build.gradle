@@ -32,16 +32,15 @@ dependencies {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-1.16.5:2022.03.06@zip")
     }
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+    modImplementation "de.maxhenkel.voicechat:voicechat-api:${project.voicechat_api}"
+    modImplementation "maven.modrinth:simple-voice-chat:fabric-${project.voicechat}"
+
     modImplementation "io.github.kosmx.emotes:emotesMain:${project.emotecraft}"
-    modImplementation files("run/mods/emotecraft-for-MC1.19.4-2.2.7-b.build.50-fabric.jar")
-    modImplementation "dev.kosmx.player-anim:player-animation-lib-fabric:1.0.2+1.19.4"
-    modImplementation "de.maxhenkel.voicechat:voicechat-api:2.2.28"
-    modImplementation "maven.modrinth:simple-voice-chat:fabric-1.19.4-2.3.28"
+    modImplementation "dev.kosmx.player-anim:player-animation-lib-fabric:${project.player_animation_lib}"
+    modImplementation "maven.modrinth:emotecraft:${project.emotecraft}+${project.minecraft_version}-fabric"
 }
 
 processResources {
