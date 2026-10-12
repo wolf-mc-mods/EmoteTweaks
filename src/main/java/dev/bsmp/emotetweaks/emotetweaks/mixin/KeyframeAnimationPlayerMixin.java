@@ -24,7 +24,6 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-import de.maxhenkel.voicechat.voice.client.SoundManager;
 import dev.bsmp.emotetweaks.emotetweaks.SoundFrame;
 import dev.bsmp.emotetweaks.voicefx.SoundPlugin;
 import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
@@ -46,7 +45,9 @@ public class KeyframeAnimationPlayerMixin {
     @Inject(method = "<init>(Ldev/kosmx/playerAnim/core/data/KeyframeAnimation;I)V", at = @At("TAIL"))
     private void onConstruct(KeyframeAnimation emote, int t, CallbackInfo ci) {
         if(emote.extraData.containsKey("name")) {
-            Path autoFile = FabricLoader.getInstance().getGameDir().resolve("emotes" + FileSystems.getDefault().getSeparator() + ((String) emote.extraData.get("name")).replace("\"", "") + ".wav");
+            String rawName = String.valueOf(emote.extraData.get("name"));
+            String safeName = sanitizeEmoteName(rawName);
+            Path autoFile = FabricLoader.getInstance().getGameDir().resolve("emotes" + FileSystems.getDefault().getSeparator() + safeName + ".wav");
             if (autoFile.toFile().exists()) {
                 try {
                     short[] pairedSound = loadAudioFile(autoFile);
@@ -72,13 +73,33 @@ public class KeyframeAnimationPlayerMixin {
         }
     }
 
+    private static String sanitizeEmoteName(String raw) {
+        if (raw == null) return "";
+        String s = raw;
+        int idx = s.indexOf("fallback:");
+        if (idx >= 0) {
+            String rest = s.substring(idx + "fallback:".length());
+            int end = rest.lastIndexOf('}');
+            if (end >= 0) rest = rest.substring(0, end);
+            s = rest.trim();
+        }
+        // retirer guillemets éventuels et caractères interdits sous Windows
+        s = s.replace("\"", "");
+        s = s.replaceAll("[\\\\/:*?\"<>|]", "");
+        // enlever espaces fin/début
+        s = s.trim();
+        if (s.isEmpty()) s = "emote"; // fallback minimal
+        return s;
+    }
+
     private short[] loadAudioFile(String name) throws UnsupportedAudioFileException, IOException {
         return loadAudioFile(FabricLoader.getInstance().getGameDir().resolve("emotes" + FileSystems.getDefault().getSeparator() + name));
     }
 
     private short[] loadAudioFile(Path path) throws UnsupportedAudioFileException, IOException {
         AudioInputStream input = AudioSystem.getAudioInputStream(path.toFile());
-        AudioInputStream formattedInput = AudioSystem.getAudioInputStream(new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, SoundManager.SAMPLE_RATE, 16, 1, 2, SoundManager.SAMPLE_RATE, false), input);
+        float sr = 48000f;
+        AudioInputStream formattedInput = AudioSystem.getAudioInputStream(new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, sr, 16, 1, 2, sr, false), input);
         return SoundPlugin.voicechatApi.getAudioConverter().bytesToShorts(formattedInput.readAllBytes());
     }
 

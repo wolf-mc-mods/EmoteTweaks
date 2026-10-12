@@ -23,6 +23,7 @@ repositories {
     maven {
         url = "https://api.modrinth.com/maven"
     }
+    mavenCentral()
 }
 
 dependencies {
@@ -41,6 +42,12 @@ dependencies {
     modImplementation "io.github.kosmx.emotes:emotesMain:${project.emotecraft}"
     modImplementation "dev.kosmx.player-anim:player-animation-lib-fabric:${project.player_animation_lib}"
     modImplementation "maven.modrinth:emotecraft:${project.emotecraft}+${project.minecraft_version}-fabric"
+
+    // Mixin Extras needed for mixins (wrapoperation Operation)
+    def mixinExtras = "io.github.llamalad7:mixinextras-fabric:0.3.5"
+    annotationProcessor mixinExtras
+    implementation mixinExtras
+    include mixinExtras
 }
 
 processResources {

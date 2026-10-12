@@ -53,7 +53,16 @@ public class SFXThread extends Thread {
             ClientPlayNetworking.send(SFXPacket.PACKET_ID, buf);
 
             short[] finalFrame = frame;
-            Minecraft.getInstance().executeIfPossible(() -> ClientManager.getClient().processSoundPacket(new LocationSoundPacket(uuid, finalFrame, Minecraft.getInstance().player.position(), 15f, null)));
+            Minecraft.getInstance().executeIfPossible(() -> ClientManager.getClient().processSoundPacket(
+                new LocationSoundPacket(
+                    Minecraft.getInstance().player.getUUID(),
+                    uuid,
+                    finalFrame,
+                    Minecraft.getInstance().player.position(),
+                    15f,
+                    null
+                )
+            ));
 
             ++framePosition;
             long waitTimestamp = startTime + (long) framePosition * 20000000L;
