@@ -55,8 +55,8 @@ public class SFXThread extends Thread {
             short[] finalFrame = frame;
             Minecraft.getInstance().executeIfPossible(() -> ClientManager.getClient().processSoundPacket(
                 new LocationSoundPacket(
-                    Minecraft.getInstance().player.getUUID(),
                     uuid,
+                    Minecraft.getInstance().player.getUUID(),
                     finalFrame,
                     Minecraft.getInstance().player.position(),
                     15f,
